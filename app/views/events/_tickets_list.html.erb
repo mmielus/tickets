@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-  <% @tickets.each do |ticket| %>
+  <% tickets.each do |ticket| %>
     <tr>
       <td><%= ticket.name %></td>
       <td><%= ticket.seat_id_seq %></td>
@@ -24,26 +24,12 @@
       <td><%= ticket.price %></td>
       <td><%= ticket.email_address %></td>
       <td><%= ticket.phone %></td>
-      <td>
-        <button><%= link_to 'Show', ticket %></button>
-      </td>
-      <% if ticket.user == current_user %>
-        <td>
-          <button><%= link_to 'Edit', edit_ticket_path(ticket) %></button>
-        </td>
-        <td>
-          <button><%= link_to 'Destroy', ticket, method: :delete, data: {confirm: 'Are you sure?'} %></button>
-        </td>
-      <% end %>
+      <td><button><%= link_to 'Show', ticket %></button></td>
+      <td><button><%= link_to 'Edit', edit_ticket_path(ticket) %></button></td>
+      <td><button><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
 <br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Ticket', new_ticket_path %>
-<% end %>
-
-<%= link_to 'Cofnij', "/" %>

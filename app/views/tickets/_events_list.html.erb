@@ -1,0 +1,23 @@
+<h1> Wydarzenia</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Artist</th>
+    <th>Description</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% events.each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= event.artist %></td>
+      <td><%= event.description %></td>
+      <td><%= link_to 'Show', "/events/#{event.id}" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

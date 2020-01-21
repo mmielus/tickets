@@ -25,5 +25,17 @@
   <%= @ticket.email_address %>
 </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<p>
+  <strong>Phone:</strong>
+  <%= @ticket.phone %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= link_to @ticket.event_id, "/events/#{@ticket.event_id}" %>
+</p>
+
+<% if @ticket.user == current_user %>
+  <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<% end %>
 <%= link_to 'Back', tickets_path %>
