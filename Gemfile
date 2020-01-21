@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
