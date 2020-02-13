@@ -1,11 +1,15 @@
 <h1> Wszystkie wydarzenia</h1>
-<ul>
+<p></p>
+<div class="list-group">
   <% for event in @events %>
-    <li><%= link_to event.artist, "/events/#{event.id}" %></li>
+    <%= link_to event.artist, "/events/#{event.id}", :class => "list-group-item list-group-item-action list-group-item-primary" %>
   <% end %>
-</ul>
-<% if user_signed_in? %>
-  <%= link_to 'Nowe ogłoszenie', events_new_path %>
-<% end %>
 
-<%= link_to 'Cofnij', "/" %>
+</div>
+<p></p>
+<div>
+  <% if user_signed_in? %>
+    <%= link_to 'Nowe ogłoszenie', events_new_path, :class => "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Cofnij', "/", :class => "btn btn-primary" %>
+</div>
